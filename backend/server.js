@@ -56,15 +56,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-const routes = require('./routes/ToDoRoute'); // Ensure correct path
-
+const routes = require('./routes/ToDoRoute'); 
 const app = express();
 const PORT = process.env.PORT || 5000;  
 
 app.use(express.json());
 app.use(cors());
 
-// Use /api/todo as a prefix for ToDo routes
+
 app.use('/api/todo', routes);
 
 mongoose
