@@ -1,12 +1,10 @@
-const ToDoModel = require('../models/ToDoModel'); // Fixed path
+const ToDoModel = require('../models/ToDoModel'); 
 
-// Get all ToDos
 module.exports.getToDo = async (req, res) => {
     const toDo = await ToDoModel.find();
     res.send(toDo);
 };
 
-// Save a new ToDo
 module.exports.saveToDo = async (req, res) => {
     const { text } = req.body;
     ToDoModel
@@ -16,5 +14,5 @@ module.exports.saveToDo = async (req, res) => {
             console.log(data);
             res.send(data);
         })
-        .catch((error) => res.status(500).send(error)); // Add error handling
+        .catch((error) => res.status(500).send(error)); 
 };
